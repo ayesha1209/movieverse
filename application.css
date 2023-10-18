@@ -1,0 +1,36 @@
+/* styles.css */
+
+.root{
+ -fx-background-color: #1a1a1d;
+}
+
+#movieverse {
+    -fx-font-family: "Lucida Console"; /* Replace with your unique font family */
+    -fx-font-size: 36px; /* Initial font size */
+    -fx-text-fill: #6f2232; /* Text color */
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.5), 10, 0, 0, 0); /* Add a drop shadow */
+    -fx-cursor: hand; /* Change cursor on hover */
+    -fx-rotate: 0deg; /* Initial rotation */
+    -fx-transition: all 0.5s; /* Smooth transition on hover */
+}
+
+#movieverse:hover {
+    -fx-fill: #ff0000; /* Change text color on hover */
+    -fx-rotate: 360deg; /* Rotate 360 degrees on hover */
+}
+#loginButton {
+    -fx-background-color: #6f2232; /* Twitter blue color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 16px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-border-color: #950740; /* Border color (same as background color) */
+    -fx-border-width: 2px; /* Border width */
+}
+
+#signinbutton {
+    -fx-font-family: ""; /* Replace with the actual font name if "Roboto" is correct */
+    -fx-font-size: 16px; /* Specify the font size */
+    -fx-text-fill: white; /* Text color */
+}

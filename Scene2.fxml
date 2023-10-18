@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene2Controller">
+   <children>
+      <Label fx:id="nameLabel" contentDisplay="CENTER" layoutY="25.0" prefHeight="33.0" prefWidth="606.0" text="                                                    MOVIEVERSE" textFill="#b22020" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="movie1" fitHeight="107.0" fitWidth="79.0" layoutX="71.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../javan.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie11" fitHeight="122.0" fitWidth="72.0" layoutX="201.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../avengers.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie12" fitHeight="107.0" fitWidth="72.0" layoutX="458.0" layoutY="83.0" pickOnBounds="true">
+         <image>
+            <Image url="@../BANDRA.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie111" fitHeight="150.0" fitWidth="105.0" layoutX="250.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@love.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie112" fitHeight="150.0" fitWidth="72.0" layoutX="201.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../love.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie113" fitHeight="106.0" fitWidth="72.0" layoutX="71.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../thespace.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie114" fitHeight="103.0" fitWidth="72.0" layoutX="331.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../hindi%20medium.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie121" fitHeight="114.0" fitWidth="71.0" layoutX="332.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../avtar.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="movie122" fitHeight="107.0" fitWidth="72.0" layoutX="460.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../OPEN.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="mb1" layoutX="72.0" layoutY="200.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb2" layoutX="202.0" layoutY="200.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb5" layoutX="64.0" layoutY="351.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb4" layoutX="459.0" layoutY="200.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb3" layoutX="333.0" layoutY="200.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb6" layoutX="202.0" layoutY="351.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb7" layoutX="332.0" layoutY="351.0" mnemonicParsing="false" text="Buy Ticket" />
+      <Button fx:id="mb8" layoutX="459.0" layoutY="351.0" mnemonicParsing="false" text="Buy Ticket" />
+   </children>
+</AnchorPane>
