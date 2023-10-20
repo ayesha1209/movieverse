@@ -29,7 +29,7 @@
             <Image url="@../love.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="mb1" layoutX="72.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
+      <Button fx:id="JAWAN" layoutX="72.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
       <ImageView fx:id="movie114" fitHeight="103.0" fitWidth="72.0" layoutX="331.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../hindi%20medium.jpg" />
@@ -45,13 +45,13 @@
             <Image url="@../OPEN.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="mb2" layoutX="202.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
+      <Button fx:id="LOVEAGAIN" layoutX="202.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
       <Button fx:id="mb5" layoutX="72.0" layoutY="351.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
-      <Button fx:id="mb4" layoutX="459.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
-      <Button fx:id="mb3" layoutX="333.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
+      <Button fx:id="BANDRA" layoutX="459.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
+      <Button fx:id="AVATAR" layoutX="333.0" layoutY="200.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
       <Button fx:id="mb6" layoutX="202.0" layoutY="351.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
       <Button fx:id="mb7" layoutX="332.0" layoutY="351.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
-      <Button fx:id="mb8" layoutX="459.0" layoutY="351.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
+      <Button fx:id="OPENHEIMER" layoutX="459.0" layoutY="351.0" mnemonicParsing="false" onAction="#buyTicket" text="Buy Ticket" />
       <ImageView fx:id="movie1141" fitHeight="103.0" fitWidth="72.0" layoutX="201.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../hindi%20medium.jpg" />
