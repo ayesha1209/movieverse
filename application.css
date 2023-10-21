@@ -34,3 +34,7 @@
     -fx-font-size: 16px; /* Specify the font size */
     -fx-text-fill: white; /* Text color */
 }
+.selected-seat {
+    -fx-background-color: lightgray;
+}
+

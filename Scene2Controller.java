@@ -45,6 +45,7 @@ public class Scene2Controller {
         try {
         	 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("Scene4.fxml"));
 			root = loader2.load();
+			
 			Scene4Controller scene = loader2.getController();
 			scene.moviename.setText(buttonId);
 			
@@ -112,4 +113,3 @@ public class Scene2Controller {
          
     }
 }
-
