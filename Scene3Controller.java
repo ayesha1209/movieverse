@@ -20,6 +20,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class Scene3Controller {
 
     @FXML
     private Label seatCountLabel;
+    private LocalDate selectedDate;
     private Scene4Controller scene4Controller;
 
     // Database connection
@@ -83,7 +85,12 @@ public class Scene3Controller {
         selectedSeatIds1.addAll(seatIds);
         updateSeatCountLabel();
     }
+    public void setSelectedDate(LocalDate date) {
+        this.selectedDate = date;
 
+       System.out.print(selectedDate);
+    }
+   
     @FXML
     public void selectSeat(ActionEvent event) {
         Button selectedSeat = (Button) event.getSource();
@@ -251,4 +258,6 @@ public class Scene3Controller {
             // Handle any database errors here
         }
     }
+	
+	
 }

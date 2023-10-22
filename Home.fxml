@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="-73.0" layoutY="-8.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="SelectDate" fitHeight="400.0" fitWidth="600.0" layoutX="-73.0" layoutY="-8.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../homepage.jpg" />
          </image>
@@ -20,15 +20,16 @@
          </font>
       </Label>
       
-      <Button fx:id="goToScene2Button" layoutX="346.0" layoutY="172.0" mnemonicParsing="false" onAction="#loadScene2" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: TRANSPERENT; -fx-border-color: #ffd4d4; -fx-border-radius: 25;" text="HOME" textFill="#ffd4d4">
+      <Button fx:id="goToScene2Button" layoutX="352.0" layoutY="281.0" mnemonicParsing="false" onAction="#loadScene2" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #000000; -fx-border-color: #ffd4d4; -fx-border-radius: 25;" text="HOME" textFill="#ffd4d4">
          <font>
             <Font name="Yu Gothic UI Semibold" size="17.0" />
          </font>
       </Button>
-      <Button layoutX="346.0" layoutY="229.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: TRANSPERENT; -fx-border-color: #ffd4d4; -fx-border-radius: 25;" styleClass="-fx-background-radius : 20" text="BACK" textFill="#ffd4d4">
+      <Button layoutX="346.0" layoutY="229.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #000000; -fx-border-color: #ffd4d4; -fx-border-radius: 25;" styleClass="-fx-background-radius : 20" text="BACK" textFill="#ffd4d4">
          <font>
             <Font name="Yu Gothic UI Semibold" size="17.0" />
          </font>
       </Button>
+      <Button fx:id="SelectDate" layoutX="352.0" layoutY="180.0" mnemonicParsing="false" onAction="#openCalendarScene" text="Select DATE" />
    </children>
 </AnchorPane>

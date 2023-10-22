@@ -94,19 +94,4 @@ public class Scene2Controller {
             showAlert(AlertType.ERROR, "Database Error", "Failed to execute the database query.");
         }
         
-        
-        
-      /*  try {
-        	 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("Scene4.fxml"));
-			root = loader2.load();
-			Scene4Controller scene = loader2.getController();
-			scene.moviename.setText(movieName);
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
-         
-    }
-}
+    }}

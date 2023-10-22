@@ -1,6 +1,5 @@
 package application;
 
-
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -19,7 +18,25 @@ public class HomeController {
     private Button goToScene2Button;
     @FXML
     private Label nameLabel;
+   
+    
+    
 
+   public void openCalendarScene(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CalenderScene.fxml"));
+            Parent root = loader.load();
+            CalendarSceneController calendarController = loader.getController();
+            calendarController.setHomeController(this);  // Pass HomeController reference
+
+            Stage stage = (Stage) goToScene2Button.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
     @FXML
     void initialize() {
         goToScene2Button.setOnAction(event -> {
@@ -27,13 +44,14 @@ public class HomeController {
             loadScene2(event);
         });
     }
+
     public void displayName(String username) {
         nameLabel.setText("Welcome: " + username + " to MOVIEVERSE, your companion for booking");
     }
 
     public void loadScene2(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("scene2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
             Parent root = loader.load();
             Scene2Controller scene2Controller = loader.getController();
 
@@ -50,7 +68,5 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       
-
     }
 }
