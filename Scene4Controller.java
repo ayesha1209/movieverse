@@ -25,7 +25,7 @@ public class Scene4Controller implements Initializable {
     @FXML Label NOS;
    @FXML Label nameofseat;
     @FXML Label TAP;
-
+    private double totalTicketPrice;
     private Stage stage;
    
     @Override
@@ -49,54 +49,22 @@ public class Scene4Controller implements Initializable {
         }
         
         
-		try {
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
-			 System.out.print("\n DATABASE CONNECTED.... ");
 
-		        // Fetch seat statuses from the database
-		        PreparedStatement selectStatement = connection.prepareStatement("SELECT seat_id FROM seats");
-		        ResultSet resultSet = selectStatement.executeQuery();
-                String seatnumbers=" ";
-		        while(resultSet.next())
-		        {
-		        	
-		        	seatnumbers = seatnumbers+","+resultSet.getString(1);
-		        	
-		        	
-		        }
-		        
-		        nameofseat.setText(seatnumbers);
-		        
+
 		
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
-		    String sql = "SELECT TICKETPRICE FROM ticket WHERE MOVIE = ?"; // Use the correct table and column names from the other database
-		    PreparedStatement preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setString(1, moviename.getText().trim()); // Assuming moviename is the movie name
-		    ResultSet resultSet = preparedStatement.executeQuery();
-           
-		    if (resultSet.next()) {
-		        double ticketPrice = resultSet.getDouble("TICKETPRICE"); // Use the correct column name
-		        System.out.print(ticketPrice);
-		        
-		        // Calculate and set the total ticket price
-		         numberOfSeats = numberOfSeats+Integer.parseInt(NOS.getText()); 
-		        System.out.print(numberOfSeats);
-		        // Assuming NOS is the number of seats
-		        double totalTicketPrice = ticketPrice * numberOfSeats;
-		        TAP.setText(""+totalTicketPrice);
-		        
-		    }
-		} catch (SQLException e) {
-		    // Handle the error, e.g., log it
-		    showAlert(Alert.AlertType.ERROR, "Database Error", "Failed to retrieve ticket price.");
-		    e.printStackTrace();
-		}
-
        
+    }
+    @FXML
+    public void setSeatNumbers(String seatNumbers) {
+        nameofseat.setText(seatNumbers);
+    }
+
+    public void setMovieName(String movieName) {
+        moviename.setText(movieName);
+    }
+    public void setTotalTicketPrice(double totalTicketPrice) {
+        this.totalTicketPrice = totalTicketPrice;
+        TAP.setText(String.format("$%.2f", totalTicketPrice));
     }
     
 
@@ -127,4 +95,3 @@ public class Scene4Controller implements Initializable {
     }
 	
 }
-

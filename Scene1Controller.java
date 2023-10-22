@@ -156,10 +156,10 @@ public class Scene1Controller {
 	            String storedPassword = resultSet.getString("password");
 	            if (password.equals(storedPassword)) {
 	                // Password matches, login successful
-	                FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+	                FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
 	                root = loader.load();
-	                Scene2Controller scene2Controller = loader.getController();
-	                scene2Controller.displayName(username);
+	                HomeController HomeController = loader.getController();
+	                HomeController.displayName(username);
 	                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	                scene = new Scene(root);
 	                stage.setScene(scene);

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene3Controller">
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene3Controller">
     <children>
         <Label layoutX="215.0" layoutY="36.0" text="Select Your Seat" textFill="#b22020">
             <font>
@@ -13,7 +13,7 @@
             </font>
         </Label>
         <!-- Buttons for 20 seats -->
-        <Button fx:id="L1" layoutX="37.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
+        <Button fx:id="L1" layoutX="37.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="Seat 1" textFill="WHITE" />
 <Button fx:id="L2" layoutX="89.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
 <Button fx:id="M1" layoutX="36.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
 <Button fx:id="M2" layoutX="89.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
@@ -56,13 +56,13 @@
       <Button fx:id="M8" layoutX="525.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 8" />
       <Button fx:id="M7" layoutX="466.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
       <Button fx:id="L8" layoutX="526.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" prefHeight="7.0" prefWidth="49.0" text="Seat 8" />
-      <Button fx:id="O3" layoutX="178.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 3" />
+      <Button fx:id="O3" layoutX="178.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="Seat 3" textFill="WHITE" />
       <Button layoutX="323.0" layoutY="290.0" mnemonicParsing="false" onAction="#printticket" text="Print" />
-      <Label layoutX="20.0" layoutY="91.0" text="L" />
-      <Label layoutX="18.0" layoutY="198.0" text="O" />
-      <Label layoutX="19.0" layoutY="162.0" text="N" />
-      <Label layoutX="18.0" layoutY="129.0" text="M" />
-      <Label layoutX="18.0" layoutY="232.0" text="P" />
+      <Label layoutX="20.0" layoutY="91.0" text="L" textFill="#fff3f3" />
+      <Label layoutX="18.0" layoutY="198.0" text="O" textFill="WHITE" />
+      <Label layoutX="19.0" layoutY="162.0" text="N" textFill="WHITE" />
+      <Label layoutX="18.0" layoutY="129.0" text="M" textFill="WHITE" />
+      <Label layoutX="18.0" layoutY="232.0" text="P" textFill="WHITE" />
       <Label fx:id="seatCountLabel" layoutX="20.0" layoutY="252.0" text="" />
       <Button fx:id="confirmButton" layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#confirmBooking" text="CONFIRM" />
     </children>

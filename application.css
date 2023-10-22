@@ -3,6 +3,20 @@
 .root{
  -fx-background-color: #1a1a1d;
 }
+.bn30-button {
+    -fx-background: red;
+    -fx-background-radius: 65px;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 65px;
+    -fx-border-color: #950740;
+    -fx-border-width: 2px;
+    -fx-cursor: pointer;
+    -fx-padding: 0.7em 2em;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.5), 10, 0, 0, 0);
+}
 
 #movieverse {
     -fx-font-family: "Lucida Console"; /* Replace with your unique font family */
@@ -37,4 +51,3 @@
 .selected-seat {
     -fx-background-color: lightgray;
 }
-

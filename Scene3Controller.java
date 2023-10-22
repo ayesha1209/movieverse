@@ -31,9 +31,12 @@ public class Scene3Controller {
     private AnchorPane anchor;
     @FXML
     private Button confirmButton;
+    private String movieName;
+    private double totalTicketPrice;
 
     @FXML
     private Label seatCountLabel;
+    private Scene4Controller scene4Controller;
 
     // Database connection
     
@@ -73,7 +76,9 @@ public class Scene3Controller {
             e.printStackTrace();
         }
     }
-
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
     public void setSelectedSeatIds1(List<String> seatIds) {
         selectedSeatIds1.addAll(seatIds);
         updateSeatCountLabel();
@@ -108,13 +113,15 @@ public class Scene3Controller {
         seatCountLabel.setText("Selected Seats: " + selectedSeatCount);
     }
 
-    public void goBackToScene2(ActionEvent event) {
+   public void goBackToScene2(ActionEvent event) {
         try {
             // Create a FXMLLoader to load Scene2.fxml
+        	
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
             root = loader.load();
 
             Scene2Controller scene2Controller = loader.getController();
+            
             // Pass any necessary data to Scene2 if needed
             // scene2Controller.setData(data);
 
@@ -125,6 +132,29 @@ public class Scene3Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    
+    
+    @FXML
+    private double fetchTicketPriceFromDatabase() {
+        double ticketPrice = 0.0; // Initialize with 0
+
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
+            String sql = "SELECT TICKETPRICE FROM ticket WHERE MOVIE = ?"; // Use the correct table and column names
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, movieName); // Assuming movieName is accessible in this class
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                ticketPrice = resultSet.getDouble("TICKETPRICE"); // Use the correct column name
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle any database errors here
+        }
+
+        return ticketPrice*selectedSeatCount;
     }
 
     @FXML
@@ -140,11 +170,17 @@ public class Scene3Controller {
 
         if (result == ButtonType.OK) {
             // User confirmed, proceed to the print action
+        	totalTicketPrice = fetchTicketPriceFromDatabase();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene4.fxml"));
             root = loader.load();
 
             Scene4Controller scene4Controller = loader.getController();
+           
+            
             scene4Controller.NOS.setText(""+selectedSeatCount);
+            scene4Controller.setTotalTicketPrice(totalTicketPrice);
+            scene4Controller.setSeatNumbers("" + String.join(", ", selectedSeatIds1));
+
            
             
             // Pass any necessary data to Scene4 if needed

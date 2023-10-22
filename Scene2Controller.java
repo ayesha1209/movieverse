@@ -19,19 +19,18 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Scene2Controller {
-    @FXML
-    private Label nameLabel;
+    
 
     @FXML
     private Button JAWAN;
+    
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private Scene4Controller scene4Controller;
+   
 
-    public void displayName(String username) {
-        nameLabel.setText("Welcome: " + username + " to MOVIEVERSE, your companion for booking");
-    }
 
     @FXML
     public void buyTicket(ActionEvent event) throws IOException {
@@ -41,30 +40,28 @@ public class Scene2Controller {
 
         // Insert the movie data into the database
         insertMovieIntoDatabase(buttonId);
-        
-        try {
-        	 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("Scene4.fxml"));
-			root = loader2.load();
-			
-			Scene4Controller scene = loader2.getController();
-			scene.moviename.setText(buttonId);
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+        // You can access and manipulate members of Scene4Controller here
+        if (scene4Controller != null) {
+            scene4Controller.setMovieName(buttonId); // Assuming you have a method in Scene4Controller to set the movie name
+        }
+
         // Load the next scene (Scene3.fxml)
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
         root = loader.load();
 
         // You can pass data to Scene3 if needed
         Scene3Controller scene3Controller = loader.getController();
+        if (scene3Controller != null) {
+            scene3Controller.setMovieName(buttonId);
+        }
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 
     void showAlert(AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);
@@ -99,7 +96,7 @@ public class Scene2Controller {
         
         
         
-        try {
+      /*  try {
         	 FXMLLoader loader2 = new FXMLLoader(getClass().getResource("Scene4.fxml"));
 			root = loader2.load();
 			Scene4Controller scene = loader2.getController();
@@ -108,7 +105,7 @@ public class Scene2Controller {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 
          
     }
