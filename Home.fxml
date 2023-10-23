@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -8,17 +9,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
    <children>
-      <Button fx:id="SelectDate" layoutX="402.0" layoutY="184.0" mnemonicParsing="false" onAction="#openCalendarScene" style="-fx-background-color: #000000;" text="Select Date" textFill="WHITE" underline="true">
+      <Button fx:id="SelectDate" layoutX="402.0" layoutY="180.0" mnemonicParsing="false" onAction="#openCalendarScene" style="-fx-background-color: #000000;" text="Select Date" textFill="WHITE" underline="true">
          <font>
             <Font size="18.0" />
          </font></Button>
       
-      <Button fx:id="goToScene2Button" layoutX="377.0" layoutY="237.0" mnemonicParsing="false" onAction="#loadScene2" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #FF0000; -fx-border-radius: 25;" text="HOME" textFill="#ffd4d4">
-         <font>
-            <Font name="Yu Gothic UI Semibold" size="17.0" />
-         </font>
-      </Button>
-      <Button layoutX="377.0" layoutY="308.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #FF0000; -fx-border-radius: ; -fx-background-radius: ;" styleClass="-fx-background-radius : 20" text="BACK" textFill="#ffd4d4">
+      <Button fx:id="goToScene2Button" layoutX="379.0" layoutY="267.0" mnemonicParsing="false" onAction="#loadScene2" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: #FF0000; -fx-border-radius: 25;" text="HOME" textFill="#ffd4d4">
          <font>
             <Font name="Yu Gothic UI Semibold" size="17.0" />
          </font>
@@ -39,5 +35,6 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
+      <ChoiceBox fx:id="location" layoutX="379.0" layoutY="223.0" prefHeight="28.0" prefWidth="159.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
    </children>
 </AnchorPane>

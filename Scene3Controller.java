@@ -35,6 +35,7 @@ public class Scene3Controller {
     private String movieName;
     private double totalTicketPrice;
       public String movieN;
+     public String selectedLocation;
 
     @FXML
     private Label seatCountLabel;
@@ -53,6 +54,7 @@ public class Scene3Controller {
     public void initialize() {
     	
     	selectedDate = SharedData.getSelectedDate();
+     selectedLocation = SharedData.getSelectedLocation();
     	
     	 try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
              String sql = "SELECT mn FROM movie ORDER BY id DESC LIMIT 1"; // Use the correct table name and column name
@@ -77,13 +79,13 @@ public class Scene3Controller {
            
 
             // Fetch seat statuses for the specific movie from the database
-            String query = "SELECT seat_id, is_booked, booking_date FROM seats WHERE moviename = ? AND booking_date = ?";
+            String query = "SELECT seat_id, is_booked, booking_date FROM seats WHERE moviename = ? AND booking_date = ? AND location = ?";
             PreparedStatement selectStatement = connection.prepareStatement(query);
             System.out.print(movieN);
             selectStatement.setString(1, movieN);
             selectStatement.setDate(2, java.sql.Date.valueOf(selectedDate));
+            selectStatement.setString(3, selectedLocation); // Set the selected location
             ResultSet resultSet = selectStatement.executeQuery();
-
             while (resultSet.next()) {
                 String seatId = resultSet.getString("seat_id");
                 boolean isBooked = resultSet.getBoolean("is_booked");
@@ -107,6 +109,10 @@ public class Scene3Controller {
         if (selectedDate != null) {
             // Do something with the selected date
             System.out.println("Selected date in Scene3Controller: " + selectedDate);
+        }
+        if (selectedLocation != null) {
+            // Use the selected location
+            System.out.println("Selected location in Scene3Controller: " + selectedLocation);
         }
     }
     public void setMovieName(String movieName) {
@@ -261,7 +267,7 @@ public class Scene3Controller {
                             button.setStyle("-fx-background-color: red");
                              System.out.print(seatId);
                             // Store the booking information in the database
-                            updateSeatsInDatabase(seatId, true,movieName,bookingDate); // Update seat status to booked
+                            updateSeatsInDatabase(seatId, true,movieName,bookingDate,selectedLocation); // Update seat status to booked
                         }
                     }
                 }
@@ -269,18 +275,19 @@ public class Scene3Controller {
         }
     }
 
-    void updateSeatsInDatabase(String seatId, boolean isBooked, String movieName,LocalDate bookingDate) {
+    void updateSeatsInDatabase(String seatId, boolean isBooked, String movieName,LocalDate bookingDate,String location) {
         try {
             // Update the database for the selected seat
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
             System.out.print("\n DATABASE CONNECTED.... ");
 
             // Update the database for the selected seat
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO seats (seat_id, is_booked, moviename, booking_date) VALUES(?, ?, ?, ?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO seats (seat_id, is_booked, moviename, booking_date, location) VALUES(?, ?, ?, ?, ?)");
             statement.setBoolean(2, isBooked);
             statement.setString(1, seatId);
             statement.setString(3, movieName); 
             statement.setDate(4, java.sql.Date.valueOf(bookingDate)); // Convert LocalDate to SQL Date
+            statement.setString(5, location); // Set the selected location
             statement.executeUpdate();
             statement.close();
         } catch (SQLException e) {

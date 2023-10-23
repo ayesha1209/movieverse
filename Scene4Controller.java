@@ -18,6 +18,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class Scene4Controller implements Initializable {
@@ -25,11 +26,19 @@ public class Scene4Controller implements Initializable {
     @FXML Label NOS;
    @FXML Label nameofseat;
     @FXML Label TAP;
+    @FXML
+    private Label selectedDateLabel;
+
     private double totalTicketPrice;
     private Stage stage;
+    private LocalDate selectedDate;
+
    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+    	
+    	 selectedDate = SharedData.getSelectedDate();
+    	    selectedDateLabel.setText(selectedDate.toString());
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
             String sql = "SELECT mn FROM movie ORDER BY id DESC LIMIT 1"; // Use the correct table name and column name
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
