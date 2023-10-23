@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CalendarSceneController">
     <children>
-        <VBox alignment="CENTER" layoutX="120.0" layoutY="50.0" spacing="10.0">
+        <VBox alignment="CENTER" layoutX="70.0" layoutY="50.0" prefHeight="105.0" prefWidth="262.0" spacing="10.0">
             <children>
                 <DatePicker fx:id="datePicker" promptText="Select a Date" style="-fx-background-color: #000000;" />
                 <Button fx:id="confirmButton" onAction="#confirmDate" opacity="0.99" style="-fx-background-color: #ff0000;" text="Confirm" textFill="WHITE">

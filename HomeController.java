@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -11,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -24,6 +27,7 @@ public class HomeController implements Initializable{
     private Label nameLabel;
     @FXML
     private ChoiceBox<String> location;
+    public LocalDate selectedDate;
 	public String selectedLocation;
     private String[] loc = {
     	    "PVR Cinemas, Vadodara",
@@ -90,29 +94,35 @@ public class HomeController implements Initializable{
     }
 
     public void loadScene2(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
-            Parent root = loader.load();
-            Scene2Controller scene2Controller = loader.getController();
-            
+    	selectedDate = SharedData.getSelectedDate();
+        selectedLocation = SharedData.getSelectedLocation();
+    	if (selectedLocation != null && selectedDate != null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+                Parent root = loader.load();
+                Scene2Controller scene2Controller = loader.getController();
 
-            // Pass data or perform any setup here if needed
+                // Pass data or perform any setup here if needed
 
-            // Get the current stage
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                // Get the current stage
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Create a new scene
-            Scene scene = new Scene(root);
+                // Create a new scene
+                Scene scene = new Scene(root);
 
-            // Set the new scene on the stage
-            stage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
+                // Set the new scene on the stage
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            showAlert(AlertType.ERROR, "Selection Error", "Please select both date and location.");
         }
     }
     public void handleLocationSelection() {
         selectedLocation = location.getValue();
         SharedData.setSelectedLocation(selectedLocation);
+       
         // You can now use 'selectedLocation' in other methods or perform any necessary action.
     }
 
@@ -122,4 +132,11 @@ public class HomeController implements Initializable{
 		 location.setOnAction(event -> handleLocationSelection());
 		
 	}
+	public void showAlert(AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 }

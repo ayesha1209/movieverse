@@ -124,7 +124,7 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button layoutX="381.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="BACK" textFill="WHITE" />
+            <Button layoutX="381.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #0000#2827270;" text="BACK" textFill="WHITE" />
             <Button layoutX="436.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="CONTACT" textFill="WHITE" />
             <Button layoutX="507.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="ABOUT US" textFill="WHITE" />
             <Button fx:id="GANAPATH" layoutX="163.0" layoutY="558.0" mnemonicParsing="false" onAction="#buyTicket" prefHeight="18.0" prefWidth="72.0" style="-fx-background-color: #000000; -fx-border-color: #ff0000; -fx-border-radius: 20;" styleClass="-fx-border-radius : 20" text="Buy Ticket" textFill="WHITE">
