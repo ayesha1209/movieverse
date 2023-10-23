@@ -19,7 +19,7 @@ public class CalendarSceneController {
     
     @FXML
     private DatePicker datePicker;
-    
+    public LocalDate selectedDate; 
     private Scene3Controller scene3Controller;
     @FXML
     private Button confirmButton;
@@ -46,25 +46,15 @@ public class CalendarSceneController {
         });
     }
 
-    public void handleDateSelection(ActionEvent event) {
-        // Capture the selected date from the DatePicker
-        LocalDate selectedDate = datePicker.getValue();
+   
 
-        if (scene3Controller == null) {
-            // Create an instance of Scene3Controller if it's not already created
-            scene3Controller = new Scene3Controller();
-        }
-
-        // Pass the selected date to the Scene3Controller
-        scene3Controller.setSelectedDate(selectedDate);
-
-        // Now, you can perform any other actions or switch to other scenes as needed
-        // For example, you can call methods on scene3Controller or switch to another scene.
-    }
     @FXML
     public void confirmDate() {
         // Handle date selection logic
-
+    	selectedDate = datePicker.getValue();
+    	 if (selectedDate != null) {
+             // Store the selected date in the shared data model
+             SharedData.setSelectedDate(selectedDate);}
         // After selecting a date, return to the home scene
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));

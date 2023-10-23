@@ -28,6 +28,7 @@ public class Scene1Controller {
 	TextField nameTextField;
 	@FXML
     PasswordField passwordField;
+	
    
 
 	

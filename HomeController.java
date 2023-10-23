@@ -46,7 +46,7 @@ public class HomeController {
     }
 
     public void displayName(String username) {
-        nameLabel.setText("Welcome: " + username + " to MOVIEVERSE, your companion for booking");
+        nameLabel.setText("Welcome: " + username + " to MOVIEVERSE");
     }
 
     public void loadScene2(ActionEvent event) {
@@ -54,6 +54,7 @@ public class HomeController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
             Parent root = loader.load();
             Scene2Controller scene2Controller = loader.getController();
+            
 
             // Pass data or perform any setup here if needed
 

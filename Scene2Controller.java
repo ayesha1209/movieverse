@@ -37,6 +37,7 @@ public class Scene2Controller {
         // Identify which button was clicked (in this case, we have JAWAN as an example)
         Button clickedButton = (Button) event.getSource();
         String buttonId = clickedButton.getId();
+        String movieName = clickedButton.getId();
 
         // Insert the movie data into the database
         insertMovieIntoDatabase(buttonId);
@@ -47,14 +48,16 @@ public class Scene2Controller {
         }
 
         // Load the next scene (Scene3.fxml)
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene3.fxml"));
         root = loader.load();
 
         // You can pass data to Scene3 if needed
         Scene3Controller scene3Controller = loader.getController();
-        if (scene3Controller != null) {
-            scene3Controller.setMovieName(buttonId);
-        }
+        scene3Controller.setMovieName(movieName);
+        
+        
+        
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -34,10 +34,12 @@ public class Scene3Controller {
     private Button confirmButton;
     private String movieName;
     private double totalTicketPrice;
+      public String movieN;
 
     @FXML
     private Label seatCountLabel;
-    private LocalDate selectedDate;
+    public LocalDate selectedDate;
+   
     private Scene4Controller scene4Controller;
 
     // Database connection
@@ -49,20 +51,44 @@ public class Scene3Controller {
 
     @FXML
     public void initialize() {
+    	
+    	selectedDate = SharedData.getSelectedDate();
+    	
+    	 try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
+             String sql = "SELECT mn FROM movie ORDER BY id DESC LIMIT 1"; // Use the correct table name and column name
+             PreparedStatement preparedStatement = connection.prepareStatement(sql);
+             ResultSet resultSet = preparedStatement.executeQuery();
+
+             if (resultSet.next()) {
+                  movieN = resultSet.getString("mn"); // Use the correct column name
+
+                 System.out.print(movieN);
+                
+             }
+         } catch (SQLException e) {
+             // Handle the error, e.g., log it
+             
+             e.printStackTrace();
+         }
         try {
             // Establish a database connection
-           Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
             System.out.print("\n DATABASE CONNECTED.... ");
+           
 
-            // Fetch seat statuses from the database
-            PreparedStatement selectStatement = connection.prepareStatement("SELECT seat_id, is_booked FROM seats");
+            // Fetch seat statuses for the specific movie from the database
+            String query = "SELECT seat_id, is_booked, booking_date FROM seats WHERE moviename = ? AND booking_date = ?";
+            PreparedStatement selectStatement = connection.prepareStatement(query);
+            System.out.print(movieN);
+            selectStatement.setString(1, movieN);
+            selectStatement.setDate(2, java.sql.Date.valueOf(selectedDate));
             ResultSet resultSet = selectStatement.executeQuery();
 
             while (resultSet.next()) {
                 String seatId = resultSet.getString("seat_id");
                 boolean isBooked = resultSet.getBoolean("is_booked");
-                
-                root=(Parent)anchor;
+
+                root = (Parent) anchor;
                 Button button = (Button) root.lookup("#" + seatId);
                 if (button != null) {
                     if (isBooked) {
@@ -77,19 +103,22 @@ public class Scene3Controller {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
+        if (selectedDate != null) {
+            // Do something with the selected date
+            System.out.println("Selected date in Scene3Controller: " + selectedDate);
+        }
     }
     public void setMovieName(String movieName) {
         this.movieName = movieName;
+        
     }
+   
     public void setSelectedSeatIds1(List<String> seatIds) {
         selectedSeatIds1.addAll(seatIds);
         updateSeatCountLabel();
     }
-    public void setSelectedDate(LocalDate date) {
-        this.selectedDate = date;
-
-       System.out.print(selectedDate);
-    }
+   
    
     @FXML
     public void selectSeat(ActionEvent event) {
@@ -217,6 +246,7 @@ public class Scene3Controller {
 
         if (result == ButtonType.OK) {
             // User confirmed, update seats and store in the database
+        	LocalDate bookingDate = selectedDate;
             String confirmedSeatIds = String.join(",", selectedSeatIds1);
 
             for (Node node : root.getChildrenUnmodifiable()) {
@@ -231,7 +261,7 @@ public class Scene3Controller {
                             button.setStyle("-fx-background-color: red");
                              System.out.print(seatId);
                             // Store the booking information in the database
-                            updateSeatsInDatabase(seatId, true); // Update seat status to booked
+                            updateSeatsInDatabase(seatId, true,movieName,bookingDate); // Update seat status to booked
                         }
                     }
                 }
@@ -239,18 +269,18 @@ public class Scene3Controller {
         }
     }
 
-     void updateSeatsInDatabase(String seatId, boolean isBooked) {
+    void updateSeatsInDatabase(String seatId, boolean isBooked, String movieName,LocalDate bookingDate) {
         try {
             // Update the database for the selected seat
-        	Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
-             System.out.print("\n DATABASE CONNECTED.... ");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha");
+            System.out.print("\n DATABASE CONNECTED.... ");
 
-             // Fetch seat statuses from the database
-          //   PreparedStatement selectStatement = connection.prepareStatement("SELECT seat_id, is_booked FROM seats");
-        //     ResultSet resultSet = selectStatement.executeQuery();
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO seats (seat_id,is_booked) VALUES(?,?) ");
+            // Update the database for the selected seat
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO seats (seat_id, is_booked, moviename, booking_date) VALUES(?, ?, ?, ?)");
             statement.setBoolean(2, isBooked);
             statement.setString(1, seatId);
+            statement.setString(3, movieName); 
+            statement.setDate(4, java.sql.Date.valueOf(bookingDate)); // Convert LocalDate to SQL Date
             statement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
@@ -258,6 +288,8 @@ public class Scene3Controller {
             // Handle any database errors here
         }
     }
+
+    }
 	
 	
-}
+
