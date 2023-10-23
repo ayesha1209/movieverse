@@ -58,68 +58,59 @@ public class Scene1Controller {
 
 	
 	public void Submit(ActionEvent event) throws IOException, SQLException {
-		
-		String username = nameTextField.getText();
-		String pass = passwordField.getText();
-		if (nameTextField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, stage, "Form Error!",
-                "Please enter your username");
-            return;
-        }
-        if (passwordField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, stage, "Form Error!",
-                "Please enter a password");
-            return;
-        }
+	    String username = nameTextField.getText();
+	    String password = passwordField.getText();
 
-        String name = nameTextField.getText();
-        String password = passwordField.getText();
+	    // Check if the fields are empty
+	    if (username.isEmpty() || password.isEmpty()) {
+	        showAlert(Alert.AlertType.ERROR, stage, "Form Error!", "Please enter a username and password");
+	        return;
+	    }
 
-      //  JdbcDao jdbcDao = new JdbcDao();
-     //   boolean flag = jdbcDao.validate(emailId, password);
+	    // Connect to the database
+	    try {
+	        Class.forName("com.mysql.cj.jdbc.Driver");
+	        System.out.print("\n DRIVER ACTIVATED..... ");
+	    } catch (ClassNotFoundException e) {
+	        e.printStackTrace();
+	        showAlert(Alert.AlertType.ERROR, stage, "Database Error", "Database driver not found.");
+	        return;
+	    }
 
-     //   if (!flag) {
-      //      infoBox("Please enter correct Email and Password", null, "Failed");
-        //} else {
-         //   infoBox("Login Successful!", null, "Failed");
-       // }
-      
-        
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            System.out.print("\n DRIVER ACTIVATED..... ");
-            
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            // Handle the exception here, e.g., show an error message.
-            showAlert(AlertType.ERROR, stage, "Database Error", "Database driver not found.");
-            return; // Exit the method because the driver is not found.
-        }
+	    // Insert the user data into the database
+	    try (Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/signup_movieverse", "root", "ayesha")) {
+	        System.out.print("\n DATABASE CONNECTED.... ");
 
-        // Now, proceed with database operations
-        
-        try (Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/signup_movieverse", "root", "ayesha")) {
-            System.out.print("\n DATABASE CONNECTED.... ");
-            PreparedStatement st = con2.prepareStatement("insert into signupdate (username, password) value (?,?)");
-           
-            st.setString(1, name);
-            st.setString(2, password);
-            st.execute();
-            // Close the resources properly using try-with-resources.
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle the SQL exception here, e.g., show an error message.
-            showAlert(AlertType.ERROR, stage, "Database Error", "Failed to execute the database query.");
-            return; // Exit the method because of the SQL exception.
-        }
+	        // Create a PreparedStatement to insert the user data
+	        String query = "INSERT INTO signupdate (username, password) VALUES (?, ?)";
+	        PreparedStatement st = con2.prepareStatement(query);
+	        st.setString(1, username);
+	        st.setString(2, password);
 
-		
-        
-        
-        
-      
+	        // Execute the query
+	        int rowsAffected = st.executeUpdate();
 
+	        if (rowsAffected > 0) {
+	            // Signup successful, show a "Submitted" alert
+	            showAlert(Alert.AlertType.INFORMATION, stage, "Submitted", "Your signup was successful!");
+	        } else {
+	            // Something went wrong, show an error alert
+	            showAlert(Alert.AlertType.ERROR, stage, "Error", "Failed to submit the signup data.");
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        showAlert(Alert.AlertType.ERROR, stage, "Username Same ", "Try different Username.");
+	    }
 	}
+
+
+		
+        
+        
+        
+      
+
+	
 	public void login(ActionEvent event) throws IOException, SQLException {
 	    String username = nameTextField.getText();
 	    String password = passwordField.getText();

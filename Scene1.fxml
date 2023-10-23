@@ -19,23 +19,20 @@
             <Image url="@../movie.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="loginButton" layoutX="173.0" layoutY="252.0" mnemonicParsing="false" onAction="#login" opacity="0.89" prefHeight="25.0" prefWidth="249.0" style="-fx-background-color: red; -fx-border-color: red;" text="login" textFill="WHITE">
+      <Button fx:id="loginButton" layoutX="173.0" layoutY="249.0" mnemonicParsing="false" onAction="#login" opacity="0.89" prefHeight="27.0" prefWidth="249.0" style="-fx-background-color: red; -fx-border-color: red;" text="LOGIN" textFill="WHITE">
          <font>
             <Font name="Segoe UI Semibold" size="15.0" />
+            
          </font></Button>
       <Label fx:id="title" layoutX="173.0" layoutY="139.0" text="Username" textFill="#fffdfd">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="signinbutton" layoutX="259.0" layoutY="79.0" prefHeight="36.0" prefWidth="231.0" text="LOGIN" textFill="WHITE">
-         <font>
-            <Font size="25.0" />
-         </font></Label>
       <PasswordField fx:id="passwordField" layoutX="278.0" layoutY="196.0" opacity="0.65" />
-      <Label layoutX="173.0" layoutY="196.0" prefHeight="25.0" prefWidth="105.0" text="Password" textFill="#f8f6f6">
+      <Label fx:id="pass" layoutX="173.0" layoutY="196.0" prefHeight="25.0" prefWidth="105.0" text="Password" textFill="#f8f6f6">
          <font>
-            <Font name="Yu Gothic Medium" size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
       <Label layoutX="176.0" layoutY="306.0" prefHeight="25.0" prefWidth="175.0" text="Don't have account?" textFill="WHITE">
@@ -48,5 +45,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Hyperlink>
+      <Label layoutX="265.0" layoutY="85.0" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

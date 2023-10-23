@@ -32,13 +32,17 @@ public class Scene4Controller implements Initializable {
     private double totalTicketPrice;
     private Stage stage;
     private LocalDate selectedDate;
-
+    private String selectedLocation;
+    @FXML Label  locations;
    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	
     	 selectedDate = SharedData.getSelectedDate();
+    	 selectedLocation = SharedData.getSelectedLocation();
+    	 
     	    selectedDateLabel.setText(selectedDate.toString());
+    	    locations.setText(selectedLocation);
         try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/moviename", "root", "ayesha")) {
             String sql = "SELECT mn FROM movie ORDER BY id DESC LIMIT 1"; // Use the correct table name and column name
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

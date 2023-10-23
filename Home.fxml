@@ -4,6 +4,9 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -19,22 +22,43 @@
             <Font name="Yu Gothic UI Semibold" size="17.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="RED" height="200.0" layoutX="-92.0" layoutY="247.0" opacity="0.74" rotate="-123.1" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="206.0" layoutX="-113.0" layoutY="264.0" opacity="0.74" rotate="138.9" stroke="BLACK" strokeType="INSIDE" width="213.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
       <Label fx:id="nameLabel" layoutX="24.0" layoutY="32.0" lineSpacing="100.0" prefHeight="45.0" prefWidth="600.0" text="WELCOME TO MOVIEVERSE" textFill="WHITE">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="67.0" layoutY="206.0" prefHeight="61.0" prefWidth="292.0" text="Experience Movies" textFill="WHITE">
+      <Label layoutX="32.0" layoutY="153.0" prefHeight="61.0" prefWidth="292.0" text="Experience Movies" textFill="WHITE">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="113.0" layoutY="252.0" prefHeight="45.0" prefWidth="177.0" text="YOUR WAY" textFill="WHITE">
+      <Label layoutX="78.0" layoutY="199.0" prefHeight="45.0" prefWidth="177.0" text="YOUR WAY" textFill="WHITE">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
       <ChoiceBox fx:id="location" layoutX="379.0" layoutY="223.0" prefHeight="28.0" prefWidth="159.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;" />
+      <Label layoutX="32.0" layoutY="356.0" prefHeight="17.0" prefWidth="455.0" text="NOTE : Please Select date and location first" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Medium" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

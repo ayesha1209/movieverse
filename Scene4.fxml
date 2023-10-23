@@ -2,36 +2,135 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="seatnumber" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene4Controller">
    <children>
-      <Pane layoutX="197.0" layoutY="54.0" prefHeight="291.0" prefWidth="233.0">
+      <Pane layoutX="183.0" layoutY="81.0" prefHeight="291.0" prefWidth="233.0">
          <children>
-            <Label layoutX="96.0" layoutY="252.0" text="pay" />
-            <Label layoutX="62.0" layoutY="88.0" prefHeight="17.0" prefWidth="79.0" text="NO of Seats:" textFill="WHITE" />
-            <Label fx:id="NOS" layoutX="141.0" layoutY="88.0" prefHeight="17.0" prefWidth="28.0" text="df" />
-            <Label layoutX="62.0" layoutY="113.0" prefHeight="17.0" prefWidth="41.0" text="Seat" textFill="WHITE" />
-            <Label fx:id="nameofseat" layoutX="139.0" layoutY="113.0" prefHeight="17.0" prefWidth="160.0" text="the seat numbers" />
-            <Label layoutY="194.0" text="Total Amount Paid" />
-            <Label fx:id="TAP" layoutX="140.0" layoutY="194.0" prefHeight="17.0" prefWidth="55.0" text="467" />
-            <Label layoutX="63.0" layoutY="63.0" text="Date :" textFill="WHITE" />
-            <Label fx:id="selectedDateLabel" layoutX="130.0" layoutY="63.0" prefHeight="17.0" prefWidth="75.0" text="jnk" />
-            <Label layoutX="63.0" layoutY="36.0" text="Movie :" textFill="WHITE" />
-            <Label fx:id="moviename" layoutX="117.0" layoutY="36.0" prefHeight="17.0" prefWidth="233.0" text="kj" />
-            <Label layoutX="64.0" layoutY="137.0" text="Location:" textFill="WHITE" />
-            <Label fx:id="locations" layoutX="139.0" layoutY="137.0" prefHeight="17.0" prefWidth="248.0" text="location" />
+            <Label layoutX="131.0" layoutY="195.0" prefHeight="17.0" prefWidth="28.0" text="Pay" textFill="WHITE" />
+            <Label layoutX="62.0" layoutY="88.0" prefHeight="17.0" prefWidth="79.0" text="NO of Seats:" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label fx:id="NOS" layoutX="175.0" layoutY="88.0" prefHeight="17.0" prefWidth="28.0" text="df" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label layoutX="62.0" layoutY="113.0" prefHeight="17.0" prefWidth="41.0" text="Seat" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label fx:id="nameofseat" layoutX="175.0" layoutY="113.0" prefHeight="17.0" prefWidth="160.0" text="the seat numbers" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label layoutX="62.0" layoutY="162.0" text="Total amount paid:" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label fx:id="TAP" layoutX="176.0" layoutY="161.0" prefHeight="17.0" prefWidth="55.0" text="467" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label layoutX="63.0" layoutY="63.0" text="Date :" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label fx:id="selectedDateLabel" layoutX="175.0" layoutY="62.0" prefHeight="17.0" prefWidth="75.0" text="jnk" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font></Label>
+            <Label layoutX="63.0" layoutY="36.0" text="Movie :" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="moviename" layoutX="175.0" layoutY="35.0" prefHeight="17.0" prefWidth="233.0" text="kj" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="137.0" text="Location:" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="locations" layoutX="175.0" layoutY="136.0" prefHeight="17.0" prefWidth="248.0" text="location" textFill="WHITE">
+               <font>
+                  <Font name="Yu Gothic Medium" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="60.0" layoutY="-12.0" prefHeight="25.0" prefWidth="153.0" text="CINEMA TICKET" textFill="RED">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="21.0" />
+               </font>
+            </Label>
+            <Button layoutX="21.0" layoutY="239.0" mnemonicParsing="false" onAction="#goBackToScene3" style="-fx-background-color: #FF0000;" text="BOOK MORE" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="ho" layoutX="135.0" layoutY="239.0" mnemonicParsing="false" style="-fx-background-color: #FF0000;" text="HOMEPAGE" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
          </children></Pane>
-      <Label layoutX="209.0" layoutY="353.0" prefHeight="17.0" prefWidth="197.0" text="Enjoy your time at the MOVIE" />
-      <Button layoutX="487.0" layoutY="282.0" mnemonicParsing="false" text="HOMEPAGE" />
       <Label fx:id="date" layoutX="355.0" layoutY="41.0" prefHeight="17.0" prefWidth="233.0" />
-      <Button layoutX="512.0" layoutY="326.0" mnemonicParsing="false" onAction="#goBackToScene3" text="book more" />
-      <Label layoutX="189.0" layoutY="14.0" prefHeight="30.0" prefWidth="221.0" text="BOOKING CONFIRMED" textFill="WHITE">
+      <Label layoutX="203.0" layoutY="39.0" prefHeight="30.0" prefWidth="221.0" text="BOOKING CONFIRMED" textFill="WHITE">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../m1.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="216.0" layoutX="-139.0" layoutY="258.0" rotate="-120.3" stroke="BLACK" strokeType="INSIDE" width="221.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="211.0" layoutX="515.0" layoutY="-91.0" rotate="51.3" stroke="BLACK" strokeType="INSIDE" width="207.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
    </children>
 </AnchorPane>

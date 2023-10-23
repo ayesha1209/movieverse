@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <ScrollPane fx:id="myScrollPane" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="400.0" prefWidth="635.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene2Controller">
@@ -124,8 +125,8 @@
                </font>
             </Label>
             <Button layoutX="381.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="BACK" textFill="WHITE" />
-            <Button layoutX="436.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: 000000;" text="CONTACT" textFill="WHITE" />
-            <Button layoutX="507.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: 000000;" text="ABOUT US" textFill="WHITE" />
+            <Button layoutX="436.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="CONTACT" textFill="WHITE" />
+            <Button layoutX="507.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #000000;" text="ABOUT US" textFill="WHITE" />
             <Button fx:id="GANAPATH" layoutX="163.0" layoutY="558.0" mnemonicParsing="false" onAction="#buyTicket" prefHeight="18.0" prefWidth="72.0" style="-fx-background-color: #000000; -fx-border-color: #ff0000; -fx-border-radius: 20;" styleClass="-fx-border-radius : 20" text="Buy Ticket" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="11.0" />
@@ -186,6 +187,32 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" layoutX="181.0" layoutY="803.0" stroke="RED" strokeType="INSIDE" width="282.0" />
+            <ImageView fitHeight="27.0" fitWidth="35.0" layoutX="306.0" layoutY="818.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../WLOGO.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="35.0" layoutX="249.0" layoutY="818.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../FLOGO.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="35.0" layoutX="193.0" layoutY="818.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../INLOGO.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="35.0" layoutX="361.0" layoutY="818.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../YLOGO.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="35.0" layoutX="420.0" layoutY="818.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Layer%201.png" />
+               </image>
+            </ImageView>
          </children>
          <opaqueInsets>
             <Insets />

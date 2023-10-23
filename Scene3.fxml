@@ -7,63 +7,75 @@
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene3Controller">
     <children>
-        <Label layoutX="215.0" layoutY="36.0" text="Select Your Seat" textFill="#b22020">
+        <Label layoutX="226.0" layoutY="36.0" text="Select Your Seat" textFill="RED">
             <font>
-                <Font size="20.0" />
+                <Font name="Segoe UI Semibold" size="20.0" />
             </font>
         </Label>
         <!-- Buttons for 20 seats -->
-        <Button fx:id="L1" layoutX="37.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="Seat 1" textFill="WHITE" />
-<Button fx:id="L2" layoutX="89.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
-<Button fx:id="M1" layoutX="36.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
-<Button fx:id="M2" layoutX="89.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
+        <Button fx:id="L1" layoutX="37.0" layoutY="87.0" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Seat 1" textFill="WHITE" />
+<Button fx:id="L2" layoutX="89.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 2" textFill="WHITE" />
+<Button fx:id="M1" layoutX="36.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 1" textFill="WHITE" />
+<Button fx:id="M2" layoutX="89.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 2" textFill="WHITE" />
 <!-- Add buttons for seats 5 to 20 -->
-<Button fx:id="N1" layoutX="35.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
-<Button fx:id="N2" layoutX="89.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
-<Button fx:id="O1" layoutX="34.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
-<Button fx:id="M5" layoutX="295.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 5" />
+<Button fx:id="N1" layoutX="35.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 1" textFill="WHITE" />
+<Button fx:id="N2" layoutX="89.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 2" textFill="WHITE" />
+<Button fx:id="O1" layoutX="34.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 1" textFill="WHITE" />
+<Button fx:id="M5" layoutX="295.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 5" textFill="WHITE" />
         
         <!-- Add buttons for all 20 seats -->
-        <Button layoutX="519.0" layoutY="23.0" mnemonicParsing="false" onAction="#goBackToScene2" text="Go Back" />
-      <Button fx:id="M4" layoutX="237.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 4" />
-      <Button fx:id="L6" layoutX="351.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 6" />
-      <Button fx:id="L5" layoutX="295.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 5" />
-      <Button fx:id="M3" layoutX="177.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" prefHeight="25.0" prefWidth="49.0" text="Seat 3" />
-      <Button fx:id="L4" layoutX="235.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 4" />
-      <Button fx:id="L3" layoutX="178.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 3" />
-      <Button fx:id="O2" layoutX="89.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
-      <Button fx:id="O4" layoutX="237.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 4" />
-      <Button fx:id="P2" layoutX="89.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 2" />
-      <Button fx:id="P1" layoutX="34.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 1" />
-      <Button fx:id="L7" layoutX="466.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
-      <Button fx:id="P6" layoutX="355.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 6" />
-      <Button fx:id="P5" layoutX="295.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 5" />
-      <Button fx:id="P4" layoutX="237.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 4" />
-      <Button fx:id="P3" layoutX="178.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 3" />
-      <Button fx:id="O6" layoutX="355.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 6" />
-      <Button fx:id="O5" layoutX="296.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 5" />
-      <Button fx:id="N6" layoutX="355.0" layoutY="157.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 6" />
-      <Button fx:id="N5" layoutX="296.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 5" />
-      <Button fx:id="N4" layoutX="237.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 4" />
-      <Button fx:id="N3" layoutX="178.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 3" />
-      <Button fx:id="M6" layoutX="355.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 6" />
-      <Button fx:id="P8" layoutX="526.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 8" />
-      <Button fx:id="P7" layoutX="466.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
-      <Button fx:id="O8" layoutX="526.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 8" />
-      <Button fx:id="O7" layoutX="466.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
-      <Button fx:id="N8" layoutX="526.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 8" />
-      <Button fx:id="N7" layoutX="466.0" layoutY="157.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
-      <Button fx:id="M8" layoutX="525.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 8" />
-      <Button fx:id="M7" layoutX="466.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" text="Seat 7" />
-      <Button fx:id="L8" layoutX="526.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" prefHeight="7.0" prefWidth="49.0" text="Seat 8" />
-      <Button fx:id="O3" layoutX="178.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff;" text="Seat 3" textFill="WHITE" />
-      <Button layoutX="323.0" layoutY="290.0" mnemonicParsing="false" onAction="#printticket" text="Print" />
+        <Button layoutX="519.0" layoutY="23.0" mnemonicParsing="false" onAction="#goBackToScene2" style="-fx-background-color: #000000; -fx-border-color: #FF0000; -fx-border-radius: 5;" text="Go Back" textFill="WHITE" />
+      <Button fx:id="M4" layoutX="237.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 4" textFill="WHITE" />
+      <Button fx:id="L6" layoutX="351.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 6" textFill="WHITE" />
+      <Button fx:id="L5" layoutX="295.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 5" textFill="WHITE" />
+      <Button fx:id="M3" layoutX="177.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" prefHeight="28.0" prefWidth="51.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 3" textFill="WHITE" />
+      <Button fx:id="L4" layoutX="235.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 4" textFill="WHITE" />
+      <Button fx:id="L3" layoutX="178.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 3" textFill="WHITE" />
+      <Button fx:id="O2" layoutX="89.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 2" textFill="WHITE" />
+      <Button fx:id="O4" layoutX="237.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 4" textFill="WHITE" />
+      <Button fx:id="P2" layoutX="89.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 2" textFill="WHITE" />
+      <Button fx:id="P1" layoutX="34.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 1" textFill="WHITE" />
+      <Button fx:id="L7" layoutX="466.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 7" textFill="WHITE" />
+      <Button fx:id="P6" layoutX="355.0" layoutY="229.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 6" textFill="WHITE" />
+      <Button fx:id="P5" layoutX="295.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 5" textFill="WHITE" />
+      <Button fx:id="P4" layoutX="237.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 4" textFill="WHITE" />
+      <Button fx:id="P3" layoutX="178.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 3" textFill="WHITE" />
+      <Button fx:id="O6" layoutX="355.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 6" textFill="WHITE" />
+      <Button fx:id="O5" layoutX="296.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 5" textFill="WHITE" />
+      <Button fx:id="N6" layoutX="355.0" layoutY="157.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 6" textFill="WHITE" />
+      <Button fx:id="N5" layoutX="296.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 5" textFill="WHITE" />
+      <Button fx:id="N4" layoutX="237.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 4" textFill="WHITE" />
+      <Button fx:id="N3" layoutX="178.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 3" textFill="WHITE" />
+      <Button fx:id="M6" layoutX="355.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 6" textFill="WHITE" />
+      <Button fx:id="P8" layoutX="526.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 8" textFill="WHITE" />
+      <Button fx:id="P7" layoutX="466.0" layoutY="228.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 7" textFill="WHITE" />
+      <Button fx:id="O8" layoutX="526.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 8" textFill="WHITE" />
+      <Button fx:id="O7" layoutX="466.0" layoutY="193.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 7" textFill="WHITE" />
+      <Button fx:id="N8" layoutX="526.0" layoutY="158.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 8" textFill="WHITE" />
+      <Button fx:id="N7" layoutX="466.0" layoutY="157.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 7" textFill="WHITE" />
+      <Button fx:id="M8" layoutX="525.0" layoutY="124.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 8" textFill="WHITE" />
+      <Button fx:id="M7" layoutX="466.0" layoutY="125.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 7" textFill="WHITE" />
+      <Button fx:id="L8" layoutX="526.0" layoutY="87.0" mnemonicParsing="false" onAction="#selectSeat" prefHeight="28.0" prefWidth="51.0" style="-fx-background-color: #000000; -fx-border-color: #FFFFFF; -fx-border-radius: 5;" text="Seat 8" textFill="WHITE" />
+      <Button fx:id="O3" layoutX="178.0" layoutY="194.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-background-color: #000000; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Seat 3" textFill="WHITE" />
+      <Button layoutX="315.0" layoutY="277.0" mnemonicParsing="false" onAction="#printticket" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #FF0000;" text="Print" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Label layoutX="20.0" layoutY="91.0" text="L" textFill="#fff3f3" />
       <Label layoutX="18.0" layoutY="198.0" text="O" textFill="WHITE" />
       <Label layoutX="19.0" layoutY="162.0" text="N" textFill="WHITE" />
       <Label layoutX="18.0" layoutY="129.0" text="M" textFill="WHITE" />
       <Label layoutX="18.0" layoutY="232.0" text="P" textFill="WHITE" />
       <Label fx:id="seatCountLabel" layoutX="20.0" layoutY="252.0" text="" />
-      <Button fx:id="confirmButton" layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#confirmBooking" text="CONFIRM" />
+      <Button fx:id="confirmButton" layoutX="215.0" layoutY="277.0" mnemonicParsing="false" onAction="#confirmBooking" style="-fx-background-color: #FF0000;" text="CONFIRM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label layoutX="155.0" layoutY="350.0" prefHeight="17.0" prefWidth="22.0" style="-fx-border-color: #FFFFFF;" />
+      <Label layoutX="275.0" layoutY="350.0" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #FF0000;" />
+      <Label layoutX="366.0" layoutY="350.0" prefHeight="20.0" prefWidth="22.0" style="-fx-background-color: #0c6732;" textFill="#0c6732" />
+      <Label layoutX="189.0" layoutY="351.0" prefHeight="17.0" prefWidth="62.0" text="Available" textFill="WHITE" />
+      <Label layoutX="308.0" layoutY="351.0" prefHeight="17.0" prefWidth="62.0" text="Sold" textFill="WHITE" />
+      <Label layoutX="402.0" layoutY="351.0" prefHeight="17.0" prefWidth="62.0" text="Selected" textFill="WHITE" />
     </children>
 </AnchorPane>
