@@ -38,6 +38,7 @@ public class Scene1Controller {
 	private Parent root;
 	public static int i=0;
 	
+	
 	public void goToSignUp(ActionEvent event) throws IOException {
 	    FXMLLoader loader = new FXMLLoader(getClass().getResource("Signup.fxml"));
 	    root = loader.load();

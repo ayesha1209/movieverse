@@ -77,7 +77,7 @@ public class Scene4Controller implements Initializable {
     }
     public void setTotalTicketPrice(double totalTicketPrice) {
         this.totalTicketPrice = totalTicketPrice;
-        TAP.setText(String.format("$%.2f", totalTicketPrice));
+        TAP.setText(String.format("\u20B9%.2f", totalTicketPrice));
     }
     
 
@@ -92,6 +92,14 @@ public class Scene4Controller implements Initializable {
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void goToHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+      Parent  root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }

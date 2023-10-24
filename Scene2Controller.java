@@ -65,7 +65,22 @@ public class Scene2Controller {
         stage.show();
     }
 
-
+    public void goToAboutUs(ActionEvent event) throws IOException {
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("aboutus.fxml"));
+	    root = loader.load();
+	    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	    scene = new Scene(root);
+	    stage.setScene(scene);
+	    stage.show();
+	}
+	public void goToContactUs(ActionEvent event) throws IOException {
+	    FXMLLoader loader = new FXMLLoader(getClass().getResource("Contact.fxml"));
+	    root = loader.load();
+	    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	    scene = new Scene(root);
+	    stage.setScene(scene);
+	    stage.show();
+	}
     void showAlert(AlertType alertType, String title, String content) {
         Alert alert = new Alert(alertType);
         alert.initOwner(stage);
@@ -73,6 +88,22 @@ public class Scene2Controller {
         alert.setHeaderText(null);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+    public void goToScene2(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene2.fxml"));
+        root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void goToHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+        root = loader.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     void insertMovieIntoDatabase(String movieName) {
