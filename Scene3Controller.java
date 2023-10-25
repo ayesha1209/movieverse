@@ -234,47 +234,54 @@ public class Scene3Controller {
             stage.show();
         }
     }
-
     @FXML
     public void confirmBooking(ActionEvent event) {
-        Parent root = ((Node) event.getSource()).getScene().getRoot();
-        Button selectedSeat = (Button) event.getSource();
-        
+        if (selectedSeatCount > 0) {
+            // If there are selected seats, proceed with the confirmation
+            Parent root = ((Node) event.getSource()).getScene().getRoot();
+            Button selectedSeat = (Button) event.getSource();
 
-        // Create a confirmation dialog
-        Alert confirmationDialog = new Alert(AlertType.CONFIRMATION);
-        confirmationDialog.setTitle("Confirmation");
-        confirmationDialog.setHeaderText("Confirm Booking");
-        confirmationDialog.setContentText("Are you sure you want to confirm the booking?");
+            // Create a confirmation dialog
+            Alert confirmationDialog = new Alert(AlertType.CONFIRMATION);
+            confirmationDialog.setTitle("Confirmation");
+            confirmationDialog.setHeaderText("Confirm Booking");
+            confirmationDialog.setContentText("Are you sure you want to confirm the booking?");
 
-        // Show the dialog and wait for the user's response
-        ButtonType result = confirmationDialog.showAndWait().orElse(ButtonType.CANCEL);
+            // Show the dialog and wait for the user's response
+            ButtonType result = confirmationDialog.showAndWait().orElse(ButtonType.CANCEL);
 
-        if (result == ButtonType.OK) {
-            // User confirmed, update seats and store in the database
-        	LocalDate bookingDate = selectedDate;
-            String confirmedSeatIds = String.join(",", selectedSeatIds1);
+            if (result == ButtonType.OK) {
+                // User confirmed, update seats and store in the database
+                LocalDate bookingDate = selectedDate;
+                String confirmedSeatIds = String.join(",", selectedSeatIds1);
 
-            for (Node node : root.getChildrenUnmodifiable()) {
-                if (node instanceof Button) {
-                    Button button = (Button) node;
-                    if (button.getStyle().contains("green")) {
-                        // Get the seat ID
-                        String seatId = button.getId();
+                for (Node node : root.getChildrenUnmodifiable()) {
+                    if (node instanceof Button) {
+                        Button button = (Button) node;
+                        if (button.getStyle().contains("green")) {
+                            // Get the seat ID
+                            String seatId = button.getId();
 
-                        if (selectedSeatIds1.contains(seatId)) {
-                            // Change the seat color to red
-                            button.setStyle("-fx-background-color: red");
-                             System.out.print(seatId);
-                            // Store the booking information in the database
-                            updateSeatsInDatabase(seatId, true,movieName,bookingDate,selectedLocation); // Update seat status to booked
+                            if (selectedSeatIds1.contains(seatId)) {
+                                // Change the seat color to red
+                                button.setStyle("-fx-background-color: red");
+                                System.out.print(seatId);
+
+                                // Store the booking information in the database
+                                updateSeatsInDatabase(seatId, true, movieName, bookingDate, selectedLocation); // Update seat status to booked
+                            }
                         }
                     }
                 }
             }
+        } else {
+            // If no seats are selected, show an alert to inform the user
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("No Seats Selected");
+            alert.setHeaderText("Please select seats before confirming.");
+            alert.showAndWait();
         }
     }
-
     void updateSeatsInDatabase(String seatId, boolean isBooked, String movieName,LocalDate bookingDate,String location) {
         try {
             // Update the database for the selected seat
